@@ -4,21 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banana Talk</title>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>Minions Talk</h1>
-    <textarea
-      id="text-input"
-      placeholder="Enter Your text to convert it in banana language"
-    ></textarea>
-    <button id="btn-translate">Translate</button>
-
-    <h4> Output will come here</h4>
-    <div id="output">
-       
+    <div class="input-section">
+      <div class="top">
+        <h1>Minions Talk</h1>
+      </div>
+      <textarea class="text-area"
+        id="text-input"
+        placeholder="Enter Your text to convert it in banana language"
+      ></textarea>
+      <button id="btn-translate">Translate</button>
     </div>
-    <script src="app.js" type="text/javascript"></script>
+
+    <div class="output-section">
+      <h4>Output will come here</h4>
+      <div id="output"></div>
+      <script src="app.js" type="text/javascript"></script>
+    </div>
+
+    <footer>
+      <div class="footer-section"></div>
+    </footer>
   </body>
 </html>
