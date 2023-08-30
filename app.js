@@ -2,7 +2,7 @@
 let btnTranslate = document.querySelector("#btn-translate");
 let textInput = document.querySelector("#text-input");
 let outputDiv = document.querySelector("#output");
-let alert = document.querySelector("#denger");
+let dengerMsg = document.querySelector("#denger");
 let titleChange = document.querySelector("#title");
 
 
@@ -88,9 +88,9 @@ function eventCk() {
     count = count + 1;
     if (count === 5) {
       // console.log("You reach maximum limit come back one hour latter");
-      alert.innerText="You reach maximum limit chose another language";
+      dengerMsg.innerText="You reach maximum limit chose another language";
         setTimeout(() => {
-          alert.innerText= null;
+          dengerMsg.innerText= null;
           }, 5000);
 
     }
