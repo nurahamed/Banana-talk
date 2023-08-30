@@ -80,6 +80,25 @@ btnTranslate.addEventListener("click", clickHandler);
 
 //  main api data featching  end here 
 
+//handle copy
+let copyClick = document.querySelector("#copyText")
+const handleCopy = () =>{
+    if(outputDiv.innerText != "" ){
+        console.log("I am copy");
+        var text = document.getElementById("outputDiv");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        dengerMsg.innerText="Your text copied";
+        setTimeout(() => {
+          dengerMsg.innerText= null;
+        }, 5000);
+     }
+    
+}
+
+copyClick.addEventListener('click', handleCopy);
+//handle copy end here
+
 // checking the user button click if they reach 5 times of not and give them alert 
 
 let count = 0;

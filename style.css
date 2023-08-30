@@ -52,6 +52,11 @@ h1,h4 {
   margin: auto;
   margin-top: 10px;
 }
+#copyText{
+  display: block;
+  margin: auto;
+  margin-bottom: 3px;
+}
 #output {
   display: block;
   margin: auto auto 10px auto;
@@ -65,7 +70,7 @@ h1,h4 {
   object-fit: contain;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
   .footer-section {
     display: flex;
     justify-content: center;
