@@ -7,8 +7,21 @@ let alert = document.querySelector("#denger");
 
 //// my testing code 
 
+
+
+
+const urlData= {
+  url1: "url 1",
+  url2: "url 2",
+  url3: "url 3",
+  url4: "Url 4"
+}
+
+let myurl = ""
+console.log(myurl)
+// url testing code end here
 // language select by user code
-// let minionText = document.querySelector("#minion");
+
 let minionText = document.querySelector("#minion");
 let yodaText = document.querySelector("#yoda");
 let OgandaText = document.querySelector("#Oganda");
@@ -17,42 +30,44 @@ let langaugeTranslator = document.querySelector("#translateLanguage");
 
 minionText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
-  langaugeTranslator.innerText = "Minions Talk";
-  document.documentElement.style.setProperty('--box-color', 'pink');
+  langaugeTranslator.innerText = "Minions Talk Language";
+  document.documentElement.style.setProperty('--box-color', 'yellow');
+ 
+  // console.log(myurl)
+  
+  
 });
 
 OgandaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
-  langaugeTranslator.innerText = "Ogonda";
-  document.documentElement.style.setProperty('--box-color', 'red');
+  langaugeTranslator.innerText = "Ogonda Under Development";
+  document.documentElement.style.setProperty('--box-color', 'cyan');
+ 
+  // console.log(myurl)
+ 
 });
 
 yodaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
-  langaugeTranslator.innerText = "Yoda  Talk";
-  document.documentElement.style.setProperty('--box-color', 'yellow');
+  langaugeTranslator.innerText = "Yoda Talk Under Development";
+  document.documentElement.style.setProperty('--box-color', 'orange');
+ 
+ 
+  
 });
 
-// language select by user code end here
-
-let myurl = ""
-minionText.addEventListener('click', () =>{
- myurl = updateUel()
- console.log(myurl);
-
-});
-
-function updateUel(){
- return "hello i am update url";
-}
 
 
+
+
+// let serverURL = givemeUrl();
+// console.log("I am updated by -->",serverURL)
 /// my testing code end here 
 
 //  main api data featching 
 
-let serverURL = "https://api.funtranslations.com/translate/minion.json";
 // let serverURL = "https://api.funtranslations.com/translate/yoda.json";
+let serverURL = "https://api.funtranslations.com/translate/minion.json";
 
 function getTranslationURL(input) {
   return serverURL + "?" + "text=" + input;
@@ -78,18 +93,18 @@ function clickHandler() {
 btnTranslate.addEventListener("click", clickHandler);
 //  main api data featching  end here 
 
-// checking the user if they reach 5 times of not and give them alert 
+// checking the user button click if they reach 5 times of not and give them alert 
 
 let count = 0;
 function eventCk() {
   if ((outputDiv.innerText || textInput.value) != "") {
     count = count + 1;
     if (count === 5) {
-      console.log("You reach maximum limit come back one hour latter");
+      // console.log("You reach maximum limit come back one hour latter");
       alert.innerText="You reach maximum limit chose another language";
         setTimeout(() => {
-          alert.innerText="";
-          }, 3000);
+          alert.innerText= null;
+          }, 5000);
 
     }
   }
@@ -98,4 +113,4 @@ function eventCk() {
 
 btnTranslate.addEventListener("click", eventCk);
 
-// checking the user if they reach 5 times of not code end here
+// checking the user. if they reach 5 times of not code end here
