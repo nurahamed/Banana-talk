@@ -3,6 +3,7 @@ let btnTranslate = document.querySelector("#btn-translate");
 let textInput = document.querySelector("#text-input");
 let outputDiv = document.querySelector("#output");
 let alert = document.querySelector("#denger");
+let titleChange = document.querySelector("#title");
 
 
 //// my testing code 
@@ -31,6 +32,7 @@ let langaugeTranslator = document.querySelector("#translateLanguage");
 minionText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Minions Talk Language";
+  titleChange.innerText = "Minions Talk"
   document.documentElement.style.setProperty('--box-color', 'yellow');
  
   // console.log(myurl)
@@ -41,6 +43,7 @@ minionText.addEventListener("click", () => {
 OgandaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Ogonda Under Development";
+  titleChange.innerText = "Ogonda"
   document.documentElement.style.setProperty('--box-color', 'cyan');
  
   // console.log(myurl)
@@ -50,6 +53,7 @@ OgandaText.addEventListener("click", () => {
 yodaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Yoda Talk Under Development";
+  titleChange.innerText = "Yoda"
   document.documentElement.style.setProperty('--box-color', 'orange');
  
  
