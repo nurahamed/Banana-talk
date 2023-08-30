@@ -8,71 +8,53 @@ let titleChange = document.querySelector("#title");
 
 //// my testing code 
 
-
-
-
+let serverURL;
 const urlData= {
-  url1: "url 1",
-  url2: "url 2",
-  url3: "url 3",
-  url4: "Url 4"
+  url1:  "https://api.funtranslations.com/translate/minion.json",
+  url2: "https://api.funtranslations.com/translate/yoda.json",
+  url3: "https://api.funtranslations.com/translate/groot.json"
 }
 
-let myurl = ""
-console.log(myurl)
 // url testing code end here
+
 // language select by user code
 
 let minionText = document.querySelector("#minion");
 let yodaText = document.querySelector("#yoda");
-let OgandaText = document.querySelector("#Oganda");
+let OgandaText = document.querySelector("#groot");
 let langaugeTranslator = document.querySelector("#translateLanguage");
 
 
 minionText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Minions Talk Language";
+  outputDiv.innerText = null
   titleChange.innerText = "Minions Talk"
   document.documentElement.style.setProperty('--box-color', 'yellow');
- 
-  // console.log(myurl)
-  
-  
-});
-
-OgandaText.addEventListener("click", () => {
-  langaugeTranslator.innerText = "";
-  langaugeTranslator.innerText = "Ogonda Under Development";
-  titleChange.innerText = "Ogonda"
-  document.documentElement.style.setProperty('--box-color', 'cyan');
- 
-  // console.log(myurl)
- 
+  serverURL = urlData.url1;
 });
 
 yodaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
-  langaugeTranslator.innerText = "Yoda Talk Under Development";
+  langaugeTranslator.innerText = "Yoda Talk Language";
+  outputDiv.innerText = null
   titleChange.innerText = "Yoda"
   document.documentElement.style.setProperty('--box-color', 'orange');
- 
- 
-  
+  serverURL = urlData.url2;
 });
 
+OgandaText.addEventListener("click", () => {
+  langaugeTranslator.innerText = "";
+  langaugeTranslator.innerText = "Groot Talk Language";
+  outputDiv.innerText = null
+  titleChange.innerText = "groot"
+  document.documentElement.style.setProperty('--box-color', 'cyan');
+  serverURL = urlData.url3;
+  
+ 
+});
 
-
-
-
-// let serverURL = givemeUrl();
-// console.log("I am updated by -->",serverURL)
-/// my testing code end here 
-
-//  main api data featching 
-
-// let serverURL = "https://api.funtranslations.com/translate/yoda.json";
-let serverURL = "https://api.funtranslations.com/translate/minion.json";
-
+// api data fetching 
 function getTranslationURL(input) {
   return serverURL + "?" + "text=" + input;
 }
@@ -95,6 +77,7 @@ function clickHandler() {
 }
 
 btnTranslate.addEventListener("click", clickHandler);
+
 //  main api data featching  end here 
 
 // checking the user button click if they reach 5 times of not and give them alert 
