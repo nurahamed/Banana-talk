@@ -15,8 +15,6 @@ const urlData= {
   url3: "https://api.funtranslations.com/translate/groot.json"
 }
 
-// url testing code end here
-
 // language select by user code
 
 let minionText = document.querySelector("#minion");
