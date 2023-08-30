@@ -29,7 +29,7 @@ minionText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Minions Talk Language";
   outputDiv.innerText = null
-  titleChange.innerText = "Minions Talk"
+  titleChange.innerText = "Minions"
   document.documentElement.style.setProperty('--box-color', 'yellow');
   serverURL = urlData.url1;
 });
@@ -47,7 +47,7 @@ OgandaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Groot Talk Language";
   outputDiv.innerText = null
-  titleChange.innerText = "groot"
+  titleChange.innerText = "Groot"
   document.documentElement.style.setProperty('--box-color', 'cyan');
   serverURL = urlData.url3;
   
