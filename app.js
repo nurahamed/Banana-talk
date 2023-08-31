@@ -5,15 +5,14 @@ let outputDiv = document.querySelector("#output");
 let dengerMsg = document.querySelector("#denger");
 let titleChange = document.querySelector("#title");
 
-
-//// my testing code 
+//// my testing code
 
 let serverURL;
-const urlData= {
-  url1:  "https://api.funtranslations.com/translate/minion.json",
+const urlData = {
+  url1: "https://api.funtranslations.com/translate/minion.json",
   url2: "https://api.funtranslations.com/translate/yoda.json",
-  url3: "https://api.funtranslations.com/translate/groot.json"
-}
+  url3: "https://api.funtranslations.com/translate/groot.json",
+};
 
 // language select by user code
 
@@ -22,37 +21,34 @@ let yodaText = document.querySelector("#yoda");
 let OgandaText = document.querySelector("#groot");
 let langaugeTranslator = document.querySelector("#translateLanguage");
 
-
 minionText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Minions Talk Language";
-  outputDiv.innerText = null
-  titleChange.innerText = "Minions"
-  document.documentElement.style.setProperty('--box-color', 'yellow');
+  outputDiv.innerText = null;
+  titleChange.innerText = "Minions";
+  document.documentElement.style.setProperty("--box-color", "yellow");
   serverURL = urlData.url1;
 });
 
 yodaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Yoda Talk Language";
-  outputDiv.innerText = null
-  titleChange.innerText = "Yoda"
-  document.documentElement.style.setProperty('--box-color', 'orange');
+  outputDiv.innerText = null;
+  titleChange.innerText = "Yoda";
+  document.documentElement.style.setProperty("--box-color", "orange");
   serverURL = urlData.url2;
 });
 
 OgandaText.addEventListener("click", () => {
   langaugeTranslator.innerText = "";
   langaugeTranslator.innerText = "Groot Talk Language";
-  outputDiv.innerText = null
-  titleChange.innerText = "Groot"
-  document.documentElement.style.setProperty('--box-color', 'cyan');
+  outputDiv.innerText = null;
+  titleChange.innerText = "Groot";
+  document.documentElement.style.setProperty("--box-color", "cyan");
   serverURL = urlData.url3;
-  
- 
 });
 
-// api data fetching 
+// api data fetching
 function getTranslationURL(input) {
   return serverURL + "?" + "text=" + input;
 }
@@ -76,28 +72,52 @@ function clickHandler() {
 
 btnTranslate.addEventListener("click", clickHandler);
 
-//  main api data featching  end here 
+//  main api data featching  end here
+// translate error handeler
+const translateHandel = () => {
+  if (textInput.value != "") {
+    // console.log(textInput.value);
+    dengerMsg.innerText = "Translation Success";
+    setTimeout(() => {
+      dengerMsg.innerText = null;
+    }, 5000);
+  }else{
+    dengerMsg.innerText = "Choose a Language & Enter Your Text";
+    setTimeout(() => {
+      dengerMsg.innerText = null;
+    }, 5000);
+  }
+};
+btnTranslate.addEventListener("click", translateHandel);
+
+// translate error handeler end here
 
 //handle copy
-let copyClick = document.querySelector("#copyText")
-const handleCopy = () =>{
-    if(outputDiv.innerText != "" ){
-        console.log("I am copy");
-        var text = document.getElementById("outputDiv");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        dengerMsg.innerText="Your text copied";
-        setTimeout(() => {
-          dengerMsg.innerText= null;
-        }, 5000);
-     }
-    
-}
+// let copyClick = document.querySelector("#copyText")
+// var text = document.getElementById("outputDiv");
+// const handleCopy = () =>{
+//     if(outputDiv.innerText!= ""){
+//         console.log("I am copy");
+//         console.log(text.value)
+//         text.select();
+//         navigator.clipboard.writeText(text.value);
+//         dengerMsg.innerText="Your text copied";
+//         setTimeout(() => {
+//           dengerMsg.innerText= null;
+//         }, 5000);
+//      }else{
+//         dengerMsg.innerText= "Translate First";
+//         setTimeout(() => {
+//           dengerMsg.innerText= null;
+//         }, 5000);
+//      }
 
-copyClick.addEventListener('click', handleCopy);
+// }
+
+// copyClick.addEventListener('click', handleCopy);
 //handle copy end here
 
-// checking the user button click if they reach 5 times of not and give them alert 
+// checking the user button click if they reach 5 times of not and give them alert
 
 let count = 0;
 function eventCk() {
@@ -105,11 +125,10 @@ function eventCk() {
     count = count + 1;
     if (count === 5) {
       // console.log("You reach maximum limit come back one hour latter");
-      dengerMsg.innerText="You reach maximum limit chose another language";
-        setTimeout(() => {
-          dengerMsg.innerText= null;
-          }, 5000);
-
+      dengerMsg.innerText = "You reach maximum limit chose another language";
+      setTimeout(() => {
+        dengerMsg.innerText = null;
+      }, 5000);
     }
   }
   console.log("count=", count);
