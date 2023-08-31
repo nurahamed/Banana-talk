@@ -75,17 +75,23 @@ btnTranslate.addEventListener("click", clickHandler);
 //  main api data featching  end here
 // translate error handeler
 const translateHandel = () => {
-  if (textInput.value != "") {
+  if (textInput.value != "" && outputDiv.innerText != "") {
     // console.log(textInput.value);
     dengerMsg.innerText = "Translation Success";
     setTimeout(() => {
       dengerMsg.innerText = null;
-    }, 5000);
-  }else{
+    }, 6000);
+  }else if (textInput.value != "" && outputDiv.innerText == ""){
+    dengerMsg.innerText = "Come back one hour latter";
+    setTimeout(() => {
+      dengerMsg.innerText = null;
+    }, 6000);
+  } else {
     dengerMsg.innerText = "Choose a Language & Enter Your Text";
     setTimeout(() => {
       dengerMsg.innerText = null;
-    }, 5000);
+    }, 6000);
+
   }
 };
 btnTranslate.addEventListener("click", translateHandel);
