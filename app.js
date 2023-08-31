@@ -82,10 +82,10 @@ const translateHandel = () => {
       dengerMsg.innerText = null;
     }, 6000);
   }else if (textInput.value != "" && outputDiv.innerText == ""){
-    dengerMsg.innerText = "Come back one hour latter";
+    dengerMsg.innerText = "Some went wrong with server try after one hour latter";
     setTimeout(() => {
       dengerMsg.innerText = null;
-    }, 6000);
+    }, 10000);
   } else {
     dengerMsg.innerText = "Choose a Language & Enter Your Text";
     setTimeout(() => {
