@@ -59,7 +59,7 @@ function errorHandler(error) {
   setTimeout(() => {
     dengerMsg.innerText = null;
   }, 10000);
-  alert("Some went wrong with server please try after some time ");
+  // alert("Some went wrong with server please try after some time ");
 }
 
 function clickHandler() {
