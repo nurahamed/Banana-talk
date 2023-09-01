@@ -58,7 +58,7 @@ function errorHandler(error) {
   dengerMsg.innerText = "Some went wrong with server please try after some time";
   setTimeout(() => {
     dengerMsg.innerText = null;
-  }, 10000);
+  }, 20000);
   // alert("Some went wrong with server please try after some time ");
 }
 
@@ -86,12 +86,11 @@ const translateHandel = () => {
     setTimeout(() => {
       dengerMsg.innerText = null;
     }, 6000);
-  } else {
+  } else if(textInput.value != "") {
     dengerMsg.innerText = "Choose a Language & Enter Your Text";
     setTimeout(() => {
       dengerMsg.innerText = null;
     }, 6000);
-
   }
 };
 btnTranslate.addEventListener("click", translateHandel);
