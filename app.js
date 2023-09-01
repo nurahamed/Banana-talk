@@ -6,7 +6,7 @@ let dengerMsg = document.querySelector("#denger");
 let titleChange = document.querySelector("#title");
 
 //// my testing code
-
+let count = 0;
 let serverURL;
 const urlData = {
   url1: "https://api.funtranslations.com/translate/minion.json",
@@ -55,7 +55,11 @@ function getTranslationURL(input) {
 
 function errorHandler(error) {
   console.log("error occured", error);
-  alert("Some went wrong with server please truy after some time ");
+  dengerMsg.innerText = "Some went wrong with server please try after some time";
+  setTimeout(() => {
+    dengerMsg.innerText = null;
+  }, 10000);
+  alert("Some went wrong with server please try after some time ");
 }
 
 function clickHandler() {
@@ -73,19 +77,15 @@ function clickHandler() {
 btnTranslate.addEventListener("click", clickHandler);
 
 //  main api data featching  end here
-// translate error handeler
+// translate button error handeler
+
 const translateHandel = () => {
-  if (textInput.value != "" && outputDiv.innerText != "") {
+  if ((textInput.value != "" && count >= 0 )|| outputDiv.innerText != "") {
     // console.log(textInput.value);
     dengerMsg.innerText = "Translation Success";
     setTimeout(() => {
       dengerMsg.innerText = null;
     }, 6000);
-  }else if (textInput.value != "" && outputDiv.innerText == ""){
-    dengerMsg.innerText = "Some went wrong with server try after one hour latter";
-    setTimeout(() => {
-      dengerMsg.innerText = null;
-    }, 10000);
   } else {
     dengerMsg.innerText = "Choose a Language & Enter Your Text";
     setTimeout(() => {
@@ -125,7 +125,7 @@ btnTranslate.addEventListener("click", translateHandel);
 
 // checking the user button click if they reach 5 times of not and give them alert
 
-let count = 0;
+
 function eventCk() {
   if ((outputDiv.innerText || textInput.value) != "") {
     count = count + 1;
